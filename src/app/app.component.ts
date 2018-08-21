@@ -11,7 +11,7 @@ import '../../js/uui-core.min.js'
 })
 export class AppComponent implements OnInit {
   
-
+ 
 
   ngOnInit()
   {
