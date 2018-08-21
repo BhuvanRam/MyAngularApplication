@@ -10,6 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico"
+       
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,9 +20,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css","../bootstrap/css/bootstrap.min.css",
+        "../css/uui-all.css",
+        "../css/lib/components/jquery.mCustomScrollbar.min.css"
       ],
-      "scripts": [],
+      "scripts": ["../js/uui-core.min.js",
+        "../js/lib/jquery-1.12.0.min.js",
+        "../bootstrap/js/bootstrap.min.js",
+      "../js/lib/components/jquery.mCustomScrollbar.concat.min.js"],
+    
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
