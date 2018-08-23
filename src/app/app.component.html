@@ -1,19 +1,19 @@
-
-
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        ...
-        <!-- Include elements that you need described on Getting Started page (above) -->
-        ...
-    </head>
-    <body>
-        <div class="wrapper">
-          <header>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> ...
+    <!-- Include elements that you need described on Getting Started page (above) -->
+    ...
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
             <div class="uui-header sidebar-header">
                 <nav>
                     <!--Responsive html-layout-->
@@ -37,25 +37,43 @@
                             </a>
                         </div>
                         <div class="responsive-menu">
-                          <div class="menu-wrapper"> 
-                              <div class="responsive-header-button">
-                                  <a href="#" class="uui-button">Download</a>
-                              </div>
-                          </div>
-                      </div>
+                            <div class="menu-wrapper">
+                                <div class="responsive-header-button">
+                                    <a href="#" class="uui-button">Download</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="responsive-menu">
                             <div class="menu-wrapper">
                                 <div class="menu-scroll">
                                     <ul class="nav navbar-nav">
-                                        <li><a href="#"><span>Item 1</span></a></li>
+                                        <li>
+                                            <a href="#">
+                                                <span>Item 1</span>
+                                            </a>
+                                        </li>
                                         <li class="sub-menu">
-                                            <a href=""><span>Item 2</span></a>
+                                            <a href="">
+                                                <span>Item 2</span>
+                                            </a>
                                             <ul class="sub">
-                                                <li><a href="#1"><span>Sub Item 2-1</span></a></li>
-                                                <li><a href="#2"><span>Sub Item 2-2</span></a></li>
+                                                <li>
+                                                    <a href="#1">
+                                                        <span>Sub Item 2-1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#2">
+                                                        <span>Sub Item 2-2</span>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li><a href="#"><span>Item 3</span></a></li>           
+                                        <li>
+                                            <a href="#">
+                                                <span>Item 3</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -71,30 +89,30 @@
                         <span class="logo">
                             <img src="../assets/ic_logo_UUi.svg" alt="" />
                         </span>
-                       Space Pro
+                        Space Pro
                     </a>
                     <ul class="uui-header-tools nav navbar-nav">
-                      <li class="dropdown uui-header-button">
-                          <a href="#" class="dropdown-toggle uui-button" data-toggle="dropdown">Add</a>
-                          <div class="dropdown-menu" role="menu">
-                              <span class="menu-arrow"></span>
-                              <ul class="button-links">
-                                  <li>
-                                      <a href="#">
-                                          <i class="fa fa-camera"></i>
-                                          <span>Item 1</span>
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="#">
-                                          <img src="../assets/icons/search-icon-gray.svg" alt="" height="16" />
-                                          <span>Item 2</span>
-                                      </a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </li>
-                  </ul>
+                        <li class="dropdown uui-header-button">
+                            <a href="#" class="dropdown-toggle uui-button" data-toggle="dropdown">Add</a>
+                            <div class="dropdown-menu" role="menu">
+                                <span class="menu-arrow"></span>
+                                <ul class="button-links">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-camera"></i>
+                                            <span>Item 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="../assets/icons/search-icon-gray.svg" alt="" height="16" />
+                                            <span>Item 2</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         </header>
@@ -102,8 +120,8 @@
             <div class="uui-side-bar">
                 <ul class="sidebar-menu">
                     <li>
-                        <a href="#name1">
-                            <span>Item 1</span>
+                        <a href="admin">
+                            <span>Admin</span>
                         </a>
                     </li>
                     <li class="sub-menu open">
@@ -132,52 +150,78 @@
                 </ul>
             </div>
         </aside>
-        
-            <div class="uui-main-container">
-                <main>
-                    
-                    
-                </main>
-                <div class="uui-main-container site-main-container" style='margin-left:300px;padding-left:50px;'>
-                      <main style>
-                          <div class='panel'>
-                              <div class='panel-heading'>
-                                  
-                              </div>
-                              <div class='panel-body'>
-                                  <app-vehicle-detail></app-vehicle-detail>
-                                  <app-slot-bookingdetails></app-slot-bookingdetails>
-                              </div>
-                              </div>
 
-                  </main>
+        <div class="uui-main-container">
+            <main>
+
+
+            </main>
+            <div class="uui-main-container site-main-container" style='margin-left:300px;padding-left:50px;'>
+                <main style>
+                    <div class='panel'>
+                        <div class='panel-heading'>
+
+                        </div>
+                        <div class='panel-body'>
+                            <!-- <app-vehicle-detail></app-vehicle-detail>
+                            <app-slot-bookingdetails></app-slot-bookingdetails> -->
+                            <!-- <app-slot-details></app-slot-details>
+                            <app-slot-employee-information></app-slot-employee-information>
+                            <app-slot-registration></app-slot-registration> -->
+                            <app-wallet-parking-search></app-wallet-parking-search>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <footer>
+            <div class="uui-promo-footer">
+                <div class="footer-logo-copyright">
+                    <div class="epam-logo">
+                        <img src="../assets/ic_logo_UUi.svg" alt="" />
+                    </div>
+                    <p class="copyright">© 2016 EPAM Systems. All Rights Reserved.</p>
+                </div>
+                <div class="footer-navigation">
+                    <ul class="uui-footer-navigation">
+                        <li>
+                            <a href="#">Item 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Item 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Item 3</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-icon-navigation">
+                    <ul class="uui-footer-navigation icon-navigation">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-youtube-play"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-vk"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <footer>
-                <div class="uui-promo-footer">
-                    <div class="footer-logo-copyright">
-                        <div class="epam-logo">
-                            <img src="../assets/ic_logo_UUi.svg" alt="" />
-                        </div>
-                        <p class="copyright">© 2016 EPAM Systems. All Rights Reserved.</p>
-                    </div>
-                    <div class="footer-navigation">
-                        <ul class="uui-footer-navigation">
-                            <li><a href="#">Item 1</a></li>
-                            <li><a href="#">Item 2</a></li>
-                            <li><a href="#">Item 3</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-icon-navigation">
-                        <ul class="uui-footer-navigation icon-navigation">
-                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </body>
+        </footer>
+    </div>
+</body>
+
 </html>

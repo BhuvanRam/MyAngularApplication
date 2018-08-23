@@ -5,13 +5,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { SlotBookingdetailsComponent } from './slot-bookingdetails/slot-bookingdetails.component';
+import { SlotDetailsComponent } from './slot-details/slot-details.component';
+import { SlotEmployeeInformationComponent } from './slot-employee-information/slot-employee-information.component';
+import { SlotRegistrationComponent } from './slot-registration/slot-registration.component';
+import { WalletParkingSearchComponent } from './wallet-parking-search/wallet-parking-search.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     VehicleDetailComponent,
-    SlotBookingdetailsComponent
+    SlotBookingdetailsComponent,
+    SlotDetailsComponent,
+    SlotEmployeeInformationComponent,
+    SlotRegistrationComponent,
+    WalletParkingSearchComponent
   ],
   imports: [
     BrowserModule
