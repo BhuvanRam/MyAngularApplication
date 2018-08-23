@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Route, Router } from '@angular/router'
+import { RouterModule, Route, Router } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -11,14 +11,18 @@ import { SlotEmployeeInformationComponent } from './slot-employee-information/sl
 import { SlotRegistrationComponent } from './slot-registration/slot-registration.component';
 import { WalletParkingSearchComponent } from './wallet-parking-search/wallet-parking-search.component';
 import { TransferOwnershipComponent } from './transfer-ownership/transfer-ownership.component';
+import { FloaterComponent } from './floater/floater/floater.component';
+import { SlotRequestComponent } from './floater/slot-request/slot-request.component';
+import { ShareWithBuddyComponent } from './floater/share-with-buddy/share-with-buddy.component';
 
 const appRoutes = [
                     { path: 'SlotRegistration', component: SlotRegistrationComponent },
                     { path: 'SlotDetails', component: SlotDetailsComponent },
                     { path: 'SlotEmployeeInformation', component: SlotEmployeeInformationComponent },
                     { path: 'WalletParking', component: WalletParkingSearchComponent },
-                    { path: '', component: WalletParkingSearchComponent }
-                  ]
+                    { path: 'floater', component: FloaterComponent },
+                    { path: '', component: WalletParkingSearchComponent },
+                  ];
 
 @NgModule({
   declarations: [
@@ -29,11 +33,14 @@ const appRoutes = [
     SlotEmployeeInformationComponent,
     SlotRegistrationComponent,
     WalletParkingSearchComponent,
-    TransferOwnershipComponent
+    TransferOwnershipComponent,
+    FloaterComponent,
+    SlotRequestComponent,
+    ShareWithBuddyComponent
 
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule,
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],

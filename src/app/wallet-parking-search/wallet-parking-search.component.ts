@@ -14,7 +14,7 @@ export class WalletParkingSearchComponent implements OnInit {
   imageScanningContent: boolean = false;
   capturedText: string = '';
   //{ facingMode: { exact: "environment" } }
-  constraints: any = { video: { facingMode: { exact: "environment" } }, width: 320, height: 240 };
+  constraints: any = { video: true, width: 320, height: 240 };
   @ViewChild('video') video: any
   @ViewChild('canvas') canvas: any
   @ViewChild('img') img: any
