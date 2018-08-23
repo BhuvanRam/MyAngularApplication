@@ -10,7 +10,7 @@ import { SlotDetailsComponent } from './slot-details/slot-details.component';
 import { SlotEmployeeInformationComponent } from './slot-employee-information/slot-employee-information.component';
 import { SlotRegistrationComponent } from './slot-registration/slot-registration.component';
 import { WalletParkingSearchComponent } from './wallet-parking-search/wallet-parking-search.component';
-
+import { TransferOwnershipComponent } from './transfer-ownership/transfer-ownership.component';
 
 const appRoutes = [
                     { path: 'SlotRegistration', component: SlotRegistrationComponent },
@@ -28,7 +28,9 @@ const appRoutes = [
     SlotDetailsComponent,
     SlotEmployeeInformationComponent,
     SlotRegistrationComponent,
-    WalletParkingSearchComponent
+    WalletParkingSearchComponent,
+    TransferOwnershipComponent
+
   ],
   imports: [
     BrowserModule,    

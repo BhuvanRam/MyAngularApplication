@@ -10,12 +10,12 @@ import '../../js/uui-core.min.js'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
- 
 
-  ngOnInit()
-  {    
-    UUI.Sidebar.init( {over_content: true} );    
-    UUI.Navigation.init({over_content: true});
+
+
+  ngOnInit() {
+    UUI.Sidebar.init({ over_content: true });
+    UUI.Navigation.init({ over_content: true });
   }
+
 }
