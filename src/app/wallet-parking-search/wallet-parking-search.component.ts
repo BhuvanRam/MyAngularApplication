@@ -12,9 +12,9 @@ import 'rxjs/add/operator/map'
 export class WalletParkingSearchComponent implements OnInit {
 
   imageScanningContent: boolean = false;
-  capturedText:string='';
+  capturedText: string = '';
   //{ facingMode: { exact: "environment" } }
-  constraints: any = { video: { facingMode: { exact: "environment" } }, width: 320, height: 240 };
+  constraints: any = { video: true, width: 320, height: 240 };
   @ViewChild('video') video: any
   @ViewChild('canvas') canvas: any
   @ViewChild('img') img: any
@@ -33,20 +33,22 @@ export class WalletParkingSearchComponent implements OnInit {
   }
 
   imageScanning() {
-    this.imageScanningContent = true
+    this.imageScanningContent = !this.imageScanningContent;
 
-    if (this.getUserMedia()) {
-      console.log('getUserMedia() is supported by your browser');
-      navigator.mediaDevices.getUserMedia(this.constraints).
-        then((stream) => {
-          let _video = this.video.nativeElement
-          _video.srcObject = stream
-        }).catch((error) => {
-          console.log(error)
-        });
+    if (this.imageScanningContent) {
+      if (this.getUserMedia()) {
+        console.log('getUserMedia() is supported by your browser');
+        navigator.mediaDevices.getUserMedia(this.constraints).
+          then((stream) => {
+            let _video = this.video.nativeElement
+            _video.srcObject = stream
+          }).catch((error) => {
+            console.log(error)
+          });
+      }
+      else
+        console.log('getUserMedia() is not supported by your browser');
     }
-    else
-      console.log('getUserMedia() is not supported by your browser');
   }
 
   CaptureScreenshot() {
@@ -59,7 +61,7 @@ export class WalletParkingSearchComponent implements OnInit {
     this.img.nativeElement.style.display = 'inline'
     this.img.nativeElement.src = this.canvas.nativeElement.toDataURL()
     this.processImage()
-    
+
   }
 
 
@@ -68,13 +70,13 @@ export class WalletParkingSearchComponent implements OnInit {
     let uriBase = 'https://smartprowebapi.azurewebsites.net/api/ImageProcessing'
     const header = new Headers()
     header.append('Content-Type', 'application/json; charset=utf-8')
-    let requestBody = JSON.stringify({ 'base64image': this.img.nativeElement.src })    
+    let requestBody = JSON.stringify({ 'base64image': this.img.nativeElement.src })
     this.http.post(uriBase, requestBody, { headers: header }).subscribe((res) => {
       let responseString = JSON.stringify(res)
       let responseJSON = JSON.parse(responseString)
       this.capturedText = responseJSON._body
       console.log(this.capturedText)
-      this.img.nativeElement.style.display = 'none'
+      this.imageScanningContent = false
     }, (error) => {
       console.log(error)
     })
