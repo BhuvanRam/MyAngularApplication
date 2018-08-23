@@ -65,7 +65,7 @@ export class WalletParkingSearchComponent implements OnInit {
 
   processImage() {
 
-    let uriBase = 'http://smartprowebapi.azurewebsites.net/api/ImageProcessing'
+    let uriBase = 'https://smartprowebapi.azurewebsites.net/api/ImageProcessing'
     const header = new Headers()
     header.append('Content-Type', 'application/json; charset=utf-8')
     let requestBody = JSON.stringify({ 'base64image': this.img.nativeElement.src })    
