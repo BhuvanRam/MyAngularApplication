@@ -6,7 +6,7 @@
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Vehicle #</label>
       <div class="col-sm-10">
-        <input type="text" name="vehicleNumber" class="uui-form-element" />
+        <input type="text" name="vehicleNumber" class="uui-form-element" [value]='capturedText' />
         <a class="btn btn-success btn-md" (click)='imageScanning()'>
           <span class="glyphicon glyphicon-camera"></span>
         </a>

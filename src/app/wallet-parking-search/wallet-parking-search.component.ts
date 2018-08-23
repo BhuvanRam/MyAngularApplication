@@ -12,11 +12,13 @@ import 'rxjs/add/operator/map'
 export class WalletParkingSearchComponent implements OnInit {
 
   imageScanningContent: boolean = false;
+  capturedText:string='';
   //{ facingMode: { exact: "environment" } }
   constraints: any = { video: { facingMode: { exact: "environment" } }, width: 320, height: 240 };
   @ViewChild('video') video: any
   @ViewChild('canvas') canvas: any
   @ViewChild('img') img: any
+
 
   constructor(private http: Http) {
 
@@ -56,55 +58,28 @@ export class WalletParkingSearchComponent implements OnInit {
     this.video.nativeElement.style.display = 'none'
     this.img.nativeElement.style.display = 'inline'
     this.img.nativeElement.src = this.canvas.nativeElement.toDataURL()
-    let byteArray = this.getbyteArrayFromBase64(this.img.nativeElement.src)
     this.processImage()
+    
   }
 
 
   processImage() {
-    let uriBase = 'https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/recognizeText'
-    uriBase = uriBase + '?mode=Printed'
-    const header = new Headers();
-    header.append('Content-Type', 'application/json');
-    header.append('subscriptionKey', '00696481cb614ea08fdb1c8527019f43');
 
-    this.http.post(uriBase, this.img.nativeElement.src, { headers: header }).subscribe((res: Response) => {
-      console.log(res.headers['Operation-Location']);
+    let uriBase = 'http://smartprowebapi.azurewebsites.net/api/ImageProcessing'
+    const header = new Headers()
+    header.append('Content-Type', 'application/json; charset=utf-8')
+    let requestBody = JSON.stringify({ 'base64image': this.img.nativeElement.src })    
+    this.http.post(uriBase, requestBody, { headers: header }).subscribe((res) => {
+      let responseString = JSON.stringify(res)
+      let responseJSON = JSON.parse(responseString)
+      this.capturedText = responseJSON._body
+      console.log(this.capturedText)
+      this.img.nativeElement.style.display = 'none'
     }, (error) => {
-      console.log(error);
+      console.log(error)
     })
   }
 
-  getbyteArrayFromBase64(base64StringFromURL): any {
-    let parts = base64StringFromURL.split(";base64,");
-    let contentType = parts[0].replace("data:", "");
-    let base64 = parts[1];
-    let byteArray = this.base64ToByteArray(base64);
-    return byteArray;
-  }
 
-  base64ToByteArray(base64String) {
-    try {
-      var sliceSize = 1024;
-      var byteCharacters = atob(base64String);
-      var bytesLength = byteCharacters.length;
-      var slicesCount = Math.ceil(bytesLength / sliceSize);
-      var byteArrays = new Array(slicesCount);
 
-      for (var sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {
-        var begin = sliceIndex * sliceSize;
-        var end = Math.min(begin + sliceSize, bytesLength);
-
-        var bytes = new Array(end - begin);
-        for (var offset = begin, i = 0; offset < end; ++i, ++offset) {
-          bytes[i] = byteCharacters[offset].charCodeAt(0);
-        }
-        byteArrays[sliceIndex] = new Uint8Array(bytes);
-      }
-      return byteArrays;
-    } catch (e) {
-      console.log("Couldn't convert to byte array: " + e);
-      return undefined;
-    }
-  }
 }
