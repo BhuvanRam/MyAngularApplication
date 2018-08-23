@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12 col-md-2">
+      <button class="uui-button blue" (click)="request()">
+          Request for Slot
+        </button>
+        
+  </div>
+  <div class="col-xs-12 col-md-2">
+      <div class="uui-loader pulse" *ngIf="canShowLoader">
+        </div>        
+        <span *ngIf="canShowRequestStatus">Waiting list: 22</span>
+      </div>
+</div>
+
+<div class='panel' *ngIf="canShowRequestStatus">
+    <div class='panel-body'>
+      <div class="row">
+        <div class="col-md 12">
+          <form (ngSubmit)="submit()">
+            <div class="form-group row">
+              <label class="col-sm-12 col-md-1 col-form-label">share with buddy:</label>
+              <div class="col-sm-10 col-md-2">
+                <input type="text" name="employeeId" class="uui-form-element" />
+              </div>
+              <div class="col-sm-12 col-md-2">
+                  <button class="uui-button green" (click)="share()">
+                      Share
+                    </button>      
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
