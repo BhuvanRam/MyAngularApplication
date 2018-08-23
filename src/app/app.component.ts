@@ -14,9 +14,8 @@ export class AppComponent implements OnInit {
  
 
   ngOnInit()
-  {
-    UUI.Sidebar.init( {over_content: true,open: true} );
-    
-
+  {    
+    UUI.Sidebar.init( {over_content: true} );    
+    UUI.Navigation.init({over_content: true});
   }
 }

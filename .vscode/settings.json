@@ -1,4 +1,4 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/9ecbcc19-890b-45ed-8301-44b2e70144b8/resourceGroups/smartproparking/providers/Microsoft.Web/sites/smartproparking",
-    "appService.deploySubpath": "dist"
+    "appService.deploySubpath": "dist",
+    "appService.defaultWebAppToDeploy": "None"
 }

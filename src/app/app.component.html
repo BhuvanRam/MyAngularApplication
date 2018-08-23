@@ -47,31 +47,32 @@
                             <div class="menu-wrapper">
                                 <div class="menu-scroll">
                                     <ul class="nav navbar-nav">
-                                        <li>
-                                            <a href="#">
-                                                <span>Item 1</span>
-                                            </a>
-                                        </li>
                                         <li class="sub-menu">
-                                            <a href="">
-                                                <span>Item 2</span>
+                                            <a>
+                                                <span>Admin</span>
+                                                <div class="fa fa-angle-down arrow"></div>
                                             </a>
                                             <ul class="sub">
-                                                <li>
-                                                    <a href="#1">
-                                                        <span>Sub Item 2-1</span>
+                                                <li class="active">
+                                                    <a routerLink='/SlotRegistration'>
+                                                        <span>Slot Registration</span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#2">
-                                                        <span>Sub Item 2-2</span>
+                                                    <a routerLink='/SlotDetails'>
+                                                        <span>Slot Details</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a routerLink='/SlotEmployeeInformation'>
+                                                        <span>Slot Employee Information</span>
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li>
-                                            <a href="#">
-                                                <span>Item 3</span>
+                                        <li class="sub-menu">
+                                            <a routerLink='/WalletParking'>
+                                                <span>Wallet Parking</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -119,61 +120,49 @@
         <aside>
             <div class="uui-side-bar">
                 <ul class="sidebar-menu">
-                    <li>
-                        <a href="admin">
+                    <li class="sub-menu">
+                        <a>
                             <span>Admin</span>
-                        </a>
-                    </li>
-                    <li class="sub-menu open">
-                        <a href="#">
-                            <span>Item 2</span>
                             <div class="fa fa-angle-down arrow"></div>
                         </a>
                         <ul class="sub">
                             <li class="active">
-                                <a href="#">
-                                    <span>Sub Item 2-1</span>
+                                <a routerLink='/SlotRegistration'>
+                                    <span>Slot Registration</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <span>Sub Item 2-2</span>
+                                <a routerLink='/SlotDetails'>
+                                    <span>Slot Details</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink='/SlotEmployeeInformation'>
+                                    <span>Slot Employee Information</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
-                            <span>Item 3</span>
+                    <li class="sub-menu">
+                        <a routerLink='/WalletParking'>
+                            <span>Wallet Parking</span>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </aside>
 
         <div class="uui-main-container">
-            <main>
-
-
-            </main>
-            <div class="uui-main-container site-main-container" style='margin-left:300px;padding-left:50px;'>
-                <main style>
-                    <div class='panel'>
-                        <div class='panel-heading'>
-
-                        </div>
-                        <div class='panel-body'>
-                            <!-- <app-vehicle-detail></app-vehicle-detail>
-                            <app-slot-bookingdetails></app-slot-bookingdetails> -->
-                            <!-- <app-slot-details></app-slot-details>
-                            <app-slot-employee-information></app-slot-employee-information>
-                            <app-slot-registration></app-slot-registration> -->
-                            <app-wallet-parking-search></app-wallet-parking-search>
-                        </div>
+            <main style>
+                <div class="row">
+                    <div class="col-lg-12">                     
+                        <router-outlet></router-outlet>
                     </div>
-                </main>
-            </div>
+                </div>
+            </main>
         </div>
+
         <footer>
             <div class="uui-promo-footer">
                 <div class="footer-logo-copyright">

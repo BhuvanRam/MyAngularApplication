@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule, Route, Router } from '@angular/router'
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
@@ -10,6 +11,14 @@ import { SlotEmployeeInformationComponent } from './slot-employee-information/sl
 import { SlotRegistrationComponent } from './slot-registration/slot-registration.component';
 import { WalletParkingSearchComponent } from './wallet-parking-search/wallet-parking-search.component';
 
+
+const appRoutes = [
+                    { path: 'SlotRegistration', component: SlotRegistrationComponent },
+                    { path: 'SlotDetails', component: SlotDetailsComponent },
+                    { path: 'SlotEmployeeInformation', component: SlotEmployeeInformationComponent },
+                    { path: 'WalletParking', component: WalletParkingSearchComponent },
+                    { path: '', component: WalletParkingSearchComponent }
+                  ]
 
 @NgModule({
   declarations: [
@@ -22,7 +31,9 @@ import { WalletParkingSearchComponent } from './wallet-parking-search/wallet-par
     WalletParkingSearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,    
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
