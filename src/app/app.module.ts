@@ -14,6 +14,8 @@ import { TransferOwnershipComponent } from './transfer-ownership/transfer-owners
 import { FloaterComponent } from './floater/floater/floater.component';
 import { SlotRequestComponent } from './floater/slot-request/slot-request.component';
 import { ShareWithBuddyComponent } from './floater/share-with-buddy/share-with-buddy.component';
+ import {DataService} from '../shared/dataService'
+
 
 const appRoutes = [
                     { path: 'SlotRegistration', component: SlotRegistrationComponent },
@@ -44,7 +46,7 @@ const appRoutes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

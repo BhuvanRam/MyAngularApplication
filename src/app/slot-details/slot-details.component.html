@@ -2,7 +2,118 @@
     <h2>Slot Details</h2>
 </div>
 <div class='panel-body'>
-    <table class="uui-table stripe no-border">
+    <section class="uui-accordion" id="accordion1">
+        <div class="panel accordion-item" *ngFor='let slotDetail of slotDetails'>
+            <div class="accordion-heading">
+                <div class="accordion-title">
+                    <a data-toggle="collapse" data-parent="#accordion1" class="accordion-toggle" [href]="'#'  + slotDetail.Slot.Class">
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">{{slotDetail.Slot.Class}}</label> 
+                        </div>                    
+                    </a>
+                </div>
+            </div>
+            <div class="accordion-collapse collapse" [id]="slotDetail.Slot.Class">
+                <div class="accordion-body">
+                    <div class="row">
+                        <table class="uui-table stripe" style="width:80%;margin-left:25px;">
+                            <tr>
+                                <th>Total</th>
+                                <th>Occupied</th>
+                                <th>Available</th>
+                            </tr>
+                            <tr>
+                                <td>{{slotDetail.Total}}</td>
+                                <td>{{slotDetail.Occupied}}</td>
+                                <td>{{slotDetail.Available}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style='margin-top:3px;'>
+                        <button class="uui-button lime-green small" style='margin-left:25px;' (click)='showSlotDetails(slotDetail)'> Slot Details </button>
+                        <div *ngIf='slotDetail.ShowSlotDetails'>
+                            <table class="uui-table stripe" style="width:80%;margin-left:25px;margin-top:3px;">
+                                <tr>
+                                    <th>Slot #</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>538087</td>
+                                    <td>Bhuvan</td>
+                                    <td>
+                                        <button class="uui-button blue small">Release</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>538087</td>
+                                    <td>Bhuvan</td>
+                                    <td>
+                                        <button class="uui-button blue small">Release</button>
+                                    </td>
+                                </tr>
+                            </table>
+                            <ul class="uui-pagination" style="width:100%;margin-left:10%;margin-top:3px;">
+                                <li class="actions-wrapper">
+                                    <ul class="pagination-items">
+                                        <li class="back-pages disable">
+                                            <a href="#">
+                                                <i class="fa fa-angle-double-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="prev-page disable">
+                                            <a href="#">
+                                                <i class="fa fa-angle-left"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pages-wrapper">
+                                    <ul class="pagination-items">
+                                        <li class="active">
+                                            <a href="#">1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="actions-wrapper">
+                                    <ul class="pagination-items">
+                                        <li class="next-page">
+                                            <a href="#">
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="forward-pages">
+                                            <a href="#">
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</div>
+
+<!-- <div class='panel-heading'>
+    <h2>Slot Details</h2>
+</div>
+<div class='panel-body'>
+    <table class="uui-table treegrid">
         <thead>
             <tr>
                 <th>Slots</th>
@@ -13,51 +124,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Dedicated</td>
-                <td>200</td>
-                <td>10</td>
-                <td>190</td>
+            <tr class="treegrid-parent" data-grid-level="1" *ngFor='let slotDetail of slotDetails'>
                 <td>
-                    <button class="uui-button transparent solid-hover ">View </button>
+                    <span class="treegrid-caret fa fa-angle-right"></span>
+                    {{slotDetail.Slot.Class}}
+                </td>
+                <td>{{slotDetail.Total}}</td>
+                <td>{{slotDetail.Occupied}}</td>
+                <td>{{slotDetail.Available}}</td>
+                <td>
+                    <button class="uui-button transparent solid-hover" (click)='showSlotDetails(slotDetail)'>View </button>
                 </td>
             </tr>
-            <tr>
-                <td>Floaters</td>
-                <td>200</td>
-                <td>10</td>
-                <td>190</td>
-                <td>
-                    <button class="uui-button transparent solid-hover ">View </button>
-                </td>
-            </tr>
-            <tr>
-                <td>VIP</td>
-                <td>200</td>
-                <td>10</td>
-                <td>190</td>
-                <td>
-                    <button class="uui-button transparent solid-hover ">View </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Guest</td>
-                <td>200</td>
-                <td>10</td>
-                <td>190</td>
-                <td>
-                    <button class="uui-button transparent solid-hover ">View </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Cab</td>
-                <td>200</td>
-                <td>10</td>
-                <td>190</td>
-                <td>
-                    <button class="uui-button transparent solid-hover ">View </button>
-                </td>
+            <tr class="treegrid-child" data-grid-level="2">
+                <td>1 child row</td>
+                <td>Unit 1x1</td>
+                <td>Unit 1x2</td>
+                <td>Unit 1x3</td>
+                <td>Unit 1x3</td>
             </tr>
         </tbody>
     </table>
-</div>
+</div> -->

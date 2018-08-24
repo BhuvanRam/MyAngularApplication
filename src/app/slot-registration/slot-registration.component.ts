@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../../shared/dataService'
+import {IParkingClass} from '../../Model/IParkingClass'
 
 @Component({
   selector: 'app-slot-registration',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlotRegistrationComponent implements OnInit {
 
-  constructor() { }
+  vehicleClassification:IParkingClass[]
+
+  constructor(private _dataService:DataService) { }
 
   ngOnInit() {
+    this.vehicleClassification = this._dataService.getParkingClass();
   }
 
 }
