@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+
 const appRoutes = [
                     { path: 'SlotRegistration', component: SlotRegistrationComponent },
                     { path: 'SlotDetails', component: SlotDetailsComponent },
@@ -30,6 +31,9 @@ const appRoutes = [
                     { path: 'WalletParking', component: WalletParkingSearchComponent },
                     { path: 'floater', component: FloaterComponent },
                     { path: '', component: WalletParkingSearchComponent },
+                    {path: 'TransferOwnership' , component:TransferOwnershipComponent},
+                    {path: 'VehicleDetail', component:VehicleDetailComponent},
+                    {path: 'SlotBookingDetail', component:SlotBookingdetailsComponent}
                   ];
 
 @NgModule({
@@ -44,14 +48,14 @@ const appRoutes = [
     TransferOwnershipComponent,
     FloaterComponent,
     SlotRequestComponent,
-    ShareWithBuddyComponent
+    ShareWithBuddyComponent,
+    TransferOwnershipComponent,
 
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    TransferOwnershipComponent,
     CalendarModule,
     FormsModule,
     BrowserAnimationsModule
