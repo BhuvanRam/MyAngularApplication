@@ -1,7 +1,10 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Route, Router } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
@@ -15,6 +18,9 @@ import { FloaterComponent } from './floater/floater/floater.component';
 import { SlotRequestComponent } from './floater/slot-request/slot-request.component';
 import { ShareWithBuddyComponent } from './floater/share-with-buddy/share-with-buddy.component';
  import {DataService} from '../shared/dataService'
+import {CalendarModule} from 'primeng/calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 const appRoutes = [
@@ -44,7 +50,12 @@ const appRoutes = [
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    TransferOwnershipComponent,
+    CalendarModule,
+    FormsModule,
+    BrowserAnimationsModule
+    
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
